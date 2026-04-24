@@ -1,14 +1,14 @@
-
-import './App.css'
+import Navbar from './components/navbar'
+import Index from './pages'
+import Footer from './components/footer'
 
 function App() {
-
   return (
-    <>
-   <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+    <main className="min-h-screen bg-white">
+      <Navbar />
+      <Index />
+      <Footer />
+    </main>
   )
 }
 
