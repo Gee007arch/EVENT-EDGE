@@ -1,5 +1,8 @@
-import { ChevronDown, SquareCheck } from 'lucide-react';
+import { useState } from 'react';
+import { ChevronDown, ChevronRight, SquareCheck } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube, FaXTwitter } from 'react-icons/fa6';
+import eventedgeIcon from '../assets/event-edge icon.png'
+
 
 const footerLinks = {
   Sales: [
@@ -51,40 +54,58 @@ const footerLinks = {
 };
 
 const Footer = () => {
+  const [openCategory, setOpenCategory] = useState<string | null>(null);
+
+  const toggleCategory = (category: string) => {
+    setOpenCategory(openCategory === category ? null : category);
+  };
+
   return (
-    <footer className="bg-[#0d114c] pt-12 pb-8 text-white">
-      <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 border-b border-white/10 pb-10 md:flex-row">
-          <div className="text-3xl font-bold tracking-tighter">Event Edge</div>
+    <footer className="bg-gradient-to-b from-[#000000] to-[#D22023] pt-12 pb-8 text-white">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="flex flex-col items-center justify-around gap-6 lg:gap-0 border-b border-white/10 pb-10 md:flex-row">
+          <img src={eventedgeIcon} alt="Event Edge" className="w-48" />
           <div className="flex items-center gap-6">
-            <a href="#" className="transition hover:text-blue-400">
+            <a href="#" className="transition hover:text-[#EE3238]">
               <FaFacebook size={24} /> 
             </a>
-            <a href="#" className="transition hover:text-blue-400">
+            <a href="#" className="transition hover:text-[#EE3238]">
               <FaXTwitter size={24} />
             </a>
-            <a href="#" className="transition hover:text-blue-400">
+            <a href="#" className="transition hover:text-[#EE3238]">  
               <FaLinkedin size={24} />
             </a>
-            <a href="#" className="transition hover:text-blue-400">
+            <a href="#" className="transition hover:text-[#EE3238]">
               <FaYoutube size={24} />
             </a>
-            <a href="#" className="transition hover:text-blue-400">
+            <a href="#" className="transition hover:text-[#EE3238]">
               <FaInstagram size={24} />
             </a>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 py-12 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-x-8 py-4 md:grid-cols-3 md:gap-y-10 md:py-12 lg:grid-cols-6">
           {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h3 className="mb-6 text-base font-bold text-white">{category}</h3>
-              <ul className="space-y-4">
+            <div key={category} className="border-b border-white/10 md:border-none">
+              <button 
+                onClick={() => toggleCategory(category)}
+                className="flex w-full items-center justify-between py-4 text-left md:pointer-events-none md:block md:py-0"
+              >
+                <h3 className="text-base font-bold text-white md:mb-6">{category}</h3>
+                <ChevronRight 
+                  size={20} 
+                  className={`transition-transform md:hidden ${openCategory === category ? 'rotate-90' : ''}`} 
+                />
+              </button>
+              
+              <ul className={`overflow-hidden transition-all duration-300 md:max-h-none md:opacity-100 ${
+                openCategory === category ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0 md:block'
+              } space-y-2`}>
                 {links.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
-                      className="text-sm text-[#d1d5ff] transition hover:text-white"
+                      className="text-sm text-[#d1d5ff] transition hover:text-[#B1B1B1]"
                     >
                       {link.label}
                     </a>

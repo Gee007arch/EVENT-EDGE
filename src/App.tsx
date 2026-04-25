@@ -1,5 +1,5 @@
 import Navbar from './components/navbar'
-import Index from './pages'
+import Index from './pages/index'
 import Footer from './components/footer'
 
 function App() {

@@ -12,7 +12,7 @@ const HeroSection = () => {
   return (
     <section className="bg-gradient-to-b from-black via-black to-white">
       <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
-        <div className="relative top-10 overflow-hidden rounded-t-[28px] bg-[#D22023] px-6 pb-40 pt-10 text-white sm:px-10 sm:pb-44 sm:pt-14 lg:px-14 lg:pb-48 lg:pt-16">
+        <div className="relative top-20 overflow-hidden rounded-t-[28px] bg-[#D22023] px-6 pb-28 pt-10 text-white sm:px-10 sm:pb-44 sm:pt-14 lg:px-14 lg:pb-48 lg:pt-16">
           <div className="absolute right-10 top-6 hidden text-5xl text-[#ffbf43] lg:block">
             <span className="block -rotate-6">~</span>
           </div>
