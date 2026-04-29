@@ -2,18 +2,18 @@ import { ChevronRight } from 'lucide-react';
 import b3 from '../../assets/b3.png';
 import bodyImage from '../../assets/body-image.png';
 import eventedgeIcon from '../../assets/event-edge icon.png';
-import logo1 from '../../assets/logo1.png';
-import logo2 from '../../assets/logo2.png';
-import logo3 from '../../assets/logo3.png';
-import logo4 from '../../assets/logo4.png';
-import logo5 from '../../assets/logo5.png';
-import logo6 from '../../assets/logo6.png';
-import logo7 from '../../assets/logo7.png';
-import logo8 from '../../assets/logo8.png';
-import logo9 from '../../assets/logo9.png';
-import logo10 from '../../assets/logo10.png'; 
-import logo11 from '../../assets/logo11.png'; 
-import logo12 from '../../assets/logo12.png'; 
+// import logo1 from '../../assets/logo1.png';
+// import logo2 from '../../assets/logo2.png';
+// import logo3 from '../../assets/logo3.png';
+// import logo4 from '../../assets/logo4.png';
+// import logo5 from '../../assets/logo5.png';
+// import logo6 from '../../assets/logo6.png';
+// import logo7 from '../../assets/logo7.png';
+// import logo8 from '../../assets/logo8.png';
+// import logo9 from '../../assets/logo9.png';
+// import logo10 from '../../assets/logo10.png'; 
+// import logo11 from '../../assets/logo11.png'; 
+// import logo12 from '../../assets/logo12.png'; 
 
 
 
@@ -24,20 +24,20 @@ const stats = [
   { label: '24/7', desc: 'customer support' },
 ];
 
-const logos = [
-  { name: 'PennState', logo: logo1 },
-  { name: 'Morgan Stanley', logo: logo2 },
-  { name: 'wrike', logo: logo3 },
-  { name: 'zoom', logo: logo4 },
-  { name: 'okta', logo: logo5 },
-  { name: 'aetna', logo: logo6 },
-  { name: 'Optimizely', logo: logo7 },
-  { name: 'REUTERS', logo: logo8 },
-  { name: 'SONY', logo: logo9 },
-  { name: 'UPS', logo: logo10 },
-  { name: 'MERCK', logo: logo11 },
-  { name: 'AAMC', logo: logo12 },
-];
+// const logos = [
+//   { name: 'PennState', logo: logo1 },
+//   { name: 'Morgan Stanley', logo: logo2 },
+//   { name: 'wrike', logo: logo3 },
+//   { name: 'zoom', logo: logo4 },
+//   { name: 'okta', logo: logo5 },
+//   { name: 'aetna', logo: logo6 },
+//   { name: 'Optimizely', logo: logo7 },
+//   { name: 'REUTERS', logo: logo8 },
+//   { name: 'SONY', logo: logo9 },
+//   { name: 'UPS', logo: logo10 },
+//   { name: 'MERCK', logo: logo11 },
+//   { name: 'AAMC', logo: logo12 },
+// ];
 
 const SecondSection = () => {
   return (
