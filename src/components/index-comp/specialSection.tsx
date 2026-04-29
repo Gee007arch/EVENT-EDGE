@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronRight, ChevronDown, ChevronUp, X, Calendar, Megaphone, Zap, BarChart3, Layout, Users, Globe, Video, Database } from 'lucide-react';
+import { ChevronRight, ChevronDown, ChevronUp, X,} from 'lucide-react';
 import eventedgeIcon from '../../assets/event-edge icon.png';
 
 interface SubItem {
