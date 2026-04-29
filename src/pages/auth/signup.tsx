@@ -77,7 +77,7 @@ const Signup = () => {
                     : 'border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm'
                 }`}
               >
-                {/* Gradient top border for pro plan to make it pop */}
+                
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-orange-500 via-[#EE3238] to-[#D22023]" />
                 
                 <div className="flex justify-between items-start mt-2 mb-1">
@@ -103,7 +103,6 @@ const Signup = () => {
             </div>
           </div>
 
-          {/* Right Column - Form */}
           <div className="lg:w-[55%] p-6 sm:p-8 lg:p-14 bg-white flex flex-col justify-center">
             <div className="max-w-[420px] mx-auto w-full">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-black mb-3">Create a Free Account</h2>

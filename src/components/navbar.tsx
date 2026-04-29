@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { ChevronDown, Search, User } from 'lucide-react'
 import eventedgeIcon from '../assets/event-edge icon.png'
 
@@ -89,18 +90,18 @@ const Navbar = () => {
 
             {isUserDropdownOpen && (
               <div className="absolute right-0 top-full mt-4 w-40 rounded-xl bg-black py-2 shadow-xl ring-1 ring-black/5 animate-in fade-in slide-in-from-top-2">
-                <a
-                  href="/login"
+                <Link
+                  to="/login"
                   className="block px-4 py-2.5 text-sm font-semibold text-[#CACACA] transition-colors hover:bg-opacity-50 hover:text-[#EE3238]"
                 >
                   Log in
-                </a>
-                <a
-                  href="/register"
+                </Link>
+                <Link
+                  to="/register"
                   className="block px-4 py-2.5 text-sm font-semibold text-[#CACACA] transition-colors hover:bg-opacity-50 hover:text-[#EE3238]"
                 >
                   Register
-                </a>
+                </Link>
               </div>
             )}
           </div>
