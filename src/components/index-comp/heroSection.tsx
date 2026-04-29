@@ -145,7 +145,7 @@ const HeroSection = () => {
               </div>
             </div> */}
             <div className="mx-auto w-full max-w-[580px] lg:max-w-[620px]">
-              <img src={heroImg} alt="hero-image" className="w-full" />
+              <img src={heroImg} alt="hero-image" className="w-full" loading="lazy" />
             </div>
           </div>
 
