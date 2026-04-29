@@ -14,6 +14,7 @@ interface LifecycleStage {
   tagline: string;
   color: string;
   gradient: string;
+  gradientBg: string;
   items: SubItem[];
 }
 
@@ -24,6 +25,7 @@ const lifecycleData: LifecycleStage[] = [
     tagline: 'Improve your event planning workflow',
     color: 'black',
     gradient: 'from-[#000000] to-[#000000]',
+    gradientBg: 'from-[#F4F6FF] to-[#F4F6FF]',  
     items: [
       {
         title: 'Meeting approval & budgeting',
@@ -53,6 +55,7 @@ const lifecycleData: LifecycleStage[] = [
     tagline: 'Optimize your event marketing',
     color: '#0066FF',
     gradient: 'from-[#D22023] to-[#000000]',
+    gradientBg: 'from-[#F4F6FF] to-[#F4F6FF]',  
     items: [
       {
         title: 'Registration',
@@ -82,6 +85,7 @@ const lifecycleData: LifecycleStage[] = [
     tagline: 'Impress attendees when it matters most',
     color: '#00BFA5',
     gradient: 'from-[#D22023] to-[#D22023]',
+    gradientBg: 'from-[#F4F6FF] to-[#F4F6FF]',  
     items: [
       {
         title: 'Networking',
@@ -111,6 +115,7 @@ const lifecycleData: LifecycleStage[] = [
     tagline: 'Measure and prove your ROI',
     color: '#00C853',
     gradient: 'from-[#D22023] to-[#000000]',
+    gradientBg: 'from-[#F4F6FF] to-[#F4F6FF]',  
     items: [
       {
         title: 'Integrations',
@@ -152,12 +157,12 @@ const SpecialSection = () => {
 
   const getPopupPosition = () => {
     if (!activeStage) return '';
-  
+   
     switch (activeStage.id) {
-      case 'planning': return 'lg:top-1/2 lg:-translate-y-1/2 lg:right-[-105%] top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
-      case 'promotion': return 'lg:top-1/2 lg:-translate-y-1/2 lg:right-[-105%] top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
-      case 'day-of-event': return 'lg:top-1/2 lg:-translate-y-1/2 lg:left-[-105%] top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
-      case 'post-event': return 'lg:top-1/2 lg:-translate-y-1/2 lg:left-[-105%] top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
+      case 'planning': return 'lg:top-1/2 lg:-translate-y-1/2 lg:left-[110%] lg:right-auto top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
+      case 'promotion': return 'lg:top-2/3 lg:-translate-y-1/2 lg:left-[110%] lg:right-auto top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
+      case 'day-of-event': return 'lg:top-2/3 lg:-translate-y-1/2 lg:right-[110%] lg:left-auto top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
+      case 'post-event': return 'lg:top-1/2 lg:-translate-y-1/2 lg:right-[110%] lg:left-auto top-[110%] left-1/2 -translate-x-1/2 lg:translate-x-0';
       default: return '';
     }
   };
@@ -165,10 +170,10 @@ const SpecialSection = () => {
   const getArrowPosition = () => {
     if (!activeStage) return '';
     switch (activeStage.id) {
-      case 'planning': return 'lg:left-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-r-white top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
-      case 'promotion': return 'lg:left-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-r-white top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
-      case 'day-of-event': return 'lg:right-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-l-white top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
-      case 'post-event': return 'lg:right-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-l-white top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
+      case 'planning': return 'lg:left-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-r-[#F4F6FF] top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
+      case 'promotion': return 'lg:left-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-r-[#F4F6FF] top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
+      case 'day-of-event': return 'lg:right-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-l-[#F4F6FF] top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
+      case 'post-event': return 'lg:right-[-10px] lg:top-1/2 lg:-translate-y-1/2 lg:border-l-[#F4F6FF] top-[-10px] left-1/2 -translate-x-1/2 border-b-[#F4F6FF] lg:border-b-transparent';
       default: return '';
     }
   };
@@ -272,15 +277,14 @@ const SpecialSection = () => {
 
             {activeStage && (
               <div className={`absolute z-50 w-[280px] sm:w-[350px] lg:w-[400px] transition-all duration-300 ${getPopupPosition()} animate-in fade-in zoom-in slide-in-from-top-4`}>
-                <div className="relative rounded-2xl bg-[#F4F6FF] p-4 shadow-2xl ring-1 ring-black/5 sm:p-6">
-
+                <div className={`relative rounded-2xl bg-gradient-to-b ${activeStage.gradientBg} p-4 shadow-2xl ring-1 ring-black/5 sm:p-6`}>
                   <div className={`absolute h-0 w-0 border-[10px] border-transparent ${getArrowPosition()}`} />
                   
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-3">
                       <div className={`h-10 w-1 rounded-full bg-gradient-to-b ${activeStage.gradient}`} />
                       <div>
-                        <h4 className="text-lg font-bold text-[#171c63] leading-tight">{activeStage.name}</h4>
+                        <h4 className={`text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br ${activeStage.gradient} leading-tight`}>{activeStage.name}</h4>
                         <p className="text-[10px] font-medium text-gray-500 uppercase tracking-wider">Lifecycle Stage</p>
                       </div>
                     </div>
@@ -299,12 +303,12 @@ const SpecialSection = () => {
                     {activeStage.items.map((item) => {
                       const isExpanded = expandedItem === item.title;
                       return (
-                        <div key={item.title} className="overflow-hidden rounded-xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 transition-all hover:shadow-md">
+                        <div key={item.title} className="overflow-hidden rounded-2xl bg-white shadow-[0_2px_10px_rgba(0,0,0,0.04)] border border-gray-100 transition-all hover:shadow-md">
                           <button
                             onClick={() => setExpandedItem(isExpanded ? null : item.title)}
-                            className={`flex w-full items-center justify-between px-5 py-4 text-left transition-all ${isExpanded ? 'bg-[#171c63] text-white' : 'text-[#171c63] hover:bg-gray-50'}`}
+                            className={`flex w-full items-center justify-between px-5 py-4 text-left transition-all ${isExpanded ? `bg-gradient-to-br ${activeStage.gradient} text-white` : 'text-gradient-to-br ${activeStage.gradient} hover:bg-gray-50'}`}
                           >
-                            <span className={`text-sm font-bold sm:text-base ${isExpanded ? 'text-white' : 'text-[#171c63]'}`}>{item.title}</span>
+                            <span className={`text-sm font-bold sm:text-base ${isExpanded ? 'text-white' : `text-transparent bg-clip-text bg-gradient-to-br ${activeStage.gradient}`}`}>{item.title}</span>
                             {isExpanded ? <ChevronUp size={18} className="text-white" /> : <ChevronDown size={18} className="text-gray-400" />}
                           </button>
                           
