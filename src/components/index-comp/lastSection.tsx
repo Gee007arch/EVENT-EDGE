@@ -1,10 +1,9 @@
-import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
 const LastSection = () => {
   return (
     <>
-    <section className="bg-[#CACACA] py-12 lg:py-24">
+    {/* <section className="bg-[#CACACA] py-12 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="mb-12 text-center text-2xl font-extrabold tracking-tight text-[#D22023] md:text-4xl lg:text-5xl">
           What's new at Event Edge
@@ -100,7 +99,7 @@ const LastSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section> */}
 
     <section className="relative overflow-hidden bg-black py-12 lg:py-24 text-[#CACACA]">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

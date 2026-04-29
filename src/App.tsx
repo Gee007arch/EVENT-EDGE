@@ -1,14 +1,22 @@
-import Navbar from './components/navbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Layout from './components/layout'
 import Index from './pages/index'
-import Footer from './components/footer'
+import Login from './pages/auth/login'
+import Signup from './pages/auth/signup'
 
 function App() {
   return (
-    <main className="min-h-screen bg-white">
-      <Navbar />
-      <Index />
-      <Footer />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Index />} />
+        </Route>
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/register" element={<Signup />} />
+      </Routes>
+    </Router>
   )
 }
 

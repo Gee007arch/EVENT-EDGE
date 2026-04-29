@@ -195,7 +195,7 @@ const SpecialSection = () => {
           </p>
         </div>
 
-        <div className="relative flex justify-center py-6">
+        <div className="relative flex justify-center items-center">
 
           <div className="relative h-[300px] w-[300px] sm:h-[450px] sm:w-[450px] md:h-[500px] md:w-[500px]">
 
@@ -222,7 +222,7 @@ const SpecialSection = () => {
                     <button
                       key={stage.id}
                       onClick={() => handleStageClick(stage)}
-                      className={`group relative flex flex-col items-center justify-center transition-all duration-300 bg-gradient-to-tr ${stage.gradient} text-white hover:brightness-110 ${rounded} ${isActive ? 'brightness-125 shadow-[0_0_30px_rgba(0,0,0,0.2)]' : 'opacity-90 hover:opacity-100'}`}
+                      className={`group relative flex flex-col items-center justify-center transition-all duration-300 bg-gradient-to-tr ${stage.gradient} text-white hover:brightness-110 ${rounded} ${isActive ? 'brightness-125 shadow-[0_0_30px_rgba(0,0,0,0.2)]' : 'opacity-90 hover:opacity-100 hover:scale-105'}`}
                     >
                       <span className="sr-only">{stage.name}</span>
                     </button>
@@ -233,9 +233,9 @@ const SpecialSection = () => {
               <svg viewBox="0 0 500 500" className="absolute inset-0 pointer-events-none">
                 <defs>
                   <path id="path-planning" d="M 280, 80 A 180, 180 0 0 1 420, 220" />
-                  <path id="path-promotion" d="M 420, 280 A 180, 180 0 0 1 280, 420" />
+                  <path id="path-promotion" d="M 280, 420 A 180, 180 0 0 0 420, 280" />
                   <path id="path-day-of-event" d="M 80, 280 A 180, 180 0 0 0 220, 420" />
-                  <path id="path-post-event" d="M 220, 80 A 180, 180 0 0 0 80, 220" />
+                  <path id="path-post-event" d="M 80, 220 A 180, 180 0 0 1 220, 80" />
                 </defs>
                 
                 <text fill="white" className="text-lg sm:text-2xl font-medium uppercase tracking-[0.2em]">

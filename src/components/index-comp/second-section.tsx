@@ -130,7 +130,7 @@ const SecondSection = () => {
       </section>
 
 
-
+{/* 
         <section className="bg-white py-12 lg:py-24 border-t border-gray-100">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <h2 className="text-center text-2xl font-extrabold text-[#D22023] mb-16 sm:text-4xl lg:text-5xl">
@@ -159,7 +159,7 @@ const SecondSection = () => {
             <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white to-transparent pointer-events-none" />
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

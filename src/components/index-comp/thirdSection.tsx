@@ -1,5 +1,10 @@
 import { ChevronRight } from 'lucide-react';
 import eventImage from '../../assets/eventImage.png';
+import t2 from '../../assets/t2.png';
+import t3 from '../../assets/t3.png';
+import t4 from '../../assets/t4.png';
+import t5 from '../../assets/t5.png';
+import t6 from '../../assets/t6.png';
 import connect from '../../assets/connect.png';
 import demo from '../../assets/demo.png';
 
@@ -14,31 +19,31 @@ const products = [
     category: 'MOBILE EVENT APPS',
     title: 'Connect to your audience with personalized app experiences',
     linkText: 'Build engaging mobile event apps',
-    image: eventImage,
+    image: t2,
   },
   {
     category: 'EVENT EDGE WEBINAR',
     title: 'Create interactive webinars on a powerful, flexible platform',
     linkText: 'Plan webinars attendees will love',
-        image: eventImage,
+        image: t3,
   },
   {
     category: 'NEW! EVENT EDGE ESSENTIALS',
     title: 'Radically simplify your field and repeatable event programs',
     linkText: 'Launch on-brand events in minutes',
-    image: eventImage,
+    image: t4,
   },
   {
     category: 'CHECK-IN AND BADGING',
     title: 'Quickly check in attendees and print badges on demand',
     linkText: 'Improve your check-in and badging',
-    image: eventImage,
+    image: t5,
   },
   {
     category: 'INTEGRATIONS',
     title: 'Capture and integrate the data most important to you',
     linkText: 'Integrate with all your systems',
-    image: eventImage,
+    image: t6,
   },
 ];
 
