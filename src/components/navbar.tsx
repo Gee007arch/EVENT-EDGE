@@ -12,8 +12,8 @@ const navItems = [
 
 const Navbar = () => {
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-black/90 backdrop-blur-sm">
-      <nav className="mx-auto flex max-w-[1600px] px-6 lg:px-12 items-center justify-between gap-6 py-6 text-md text-white">
+    <header className="fixed top-0 left-0 z-50 w-full bg-black/90 backdrop-blur-sm ">
+      <nav className="mx-auto flex max-w-[1600px] px-6 lg:px-12 items-center justify-between gap-6 py-6 text-md text-white ">
         <div className="flex items-center gap-12">
           <a
             href="/"

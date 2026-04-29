@@ -56,8 +56,8 @@ const SecondSection = () => {
               </div>
             </div>
 
-            <div className="relative z-10 w-full lg:flex-1">
-              <div className="rounded-3xl bg-black py-16 px-8  lg:py-28 lg:pl-80 lg:pr-16">
+            <div className="relative z-10 w-full lg:flex-1 lg::max-w-4xl">
+              <div className="rounded-3xl bg-black py-16 px-8  lg:py-28 lg:pl-80 ">
                 <div className="text-[#CACACA]">
                   <div className="mb-3">
                     <img src={eventedgeIcon} alt="event edge icon" className="w-24 md:w-32 lg:w-40" />

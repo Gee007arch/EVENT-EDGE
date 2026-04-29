@@ -10,9 +10,9 @@ const featurePoints = [
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-b from-black via-black to-white">
+    <section className="bg-black pb-28">
       <div className="mx-auto max-w-[1600px] px-6 lg:px-8">
-        <div className="relative top-20 overflow-hidden rounded-t-[28px] bg-[#D22023] px-6 pb-28 pt-10 text-white sm:px-10 sm:pb-44 sm:pt-14 lg:px-14 lg:pb-48 lg:pt-16">
+        <div className="relative top-24 overflow-hidden rounded-t-[28px] bg-gradient-to-b from-[#D22023]  to-black px-6 pb-28 pt-10 text-white sm:px-10 sm:pb-44 sm:pt-14 lg:px-14 lg:pb-48 lg:pt-16">
           <div className="absolute right-10 top-6 hidden text-5xl text-[#ffbf43] lg:block">
             <span className="block -rotate-6">~</span>
           </div>
@@ -149,7 +149,7 @@ const HeroSection = () => {
             </div>
           </div>
 
-          <svg
+          {/* <svg
             viewBox="0 0 1440 260"
             preserveAspectRatio="none"
             aria-hidden="true"
@@ -159,7 +159,7 @@ const HeroSection = () => {
               d="M0,155 C170,118 360,104 545,132 C690,154 790,236 980,244 C1165,251 1315,224 1440,166 L1440,260 L0,260 Z"
               fill="white"
             />
-          </svg>
+          </svg> */}
 
           {/* <div className="absolute bottom-16 left-1/2 z-20  w-[calc(100%-3rem)] max-w-[700px] -translate-x-1/2 items-center justify-between gap-6 rounded-xl bg-white px-5 py-4 shadow-[0_14px_40px_rgba(0,0,0,0.18)] md:flex lg:bottom-20 lg:max-w-[1060px] lg:px-6">
             <div className="absolute left-0 top-0 h-full w-2 rounded-l-xl bg-gradient-to-b from-[#D22023] to-[#000000]" />
