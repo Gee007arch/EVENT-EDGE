@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { Play, Check, ChevronRight, Star, Users, Calendar, FileText, TrendingUp, Award, Shield, Globe, Headphones, ArrowRight } from 'lucide-react'
+import { Play, Star, Users, Calendar, FileText, TrendingUp } from 'lucide-react';
 
 const SpeakerManagement = () => {
   const [formData, setFormData] = useState({
