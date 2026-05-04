@@ -179,8 +179,8 @@ const SpecialSection = () => {
   };
 
   return (
-    <section className="relative  bg-white py-12 lg:py-24">
-      <div className="pointer-events-none absolute inset-0 opacity-40">
+    <section className="relative bg-white py-12 lg:py-24">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-40">
         <div className="absolute right-[-5%] top-[10%] h-[500px] w-[500px] rounded-full bg-blue-50 blur-[100px]" />
         <div className="absolute left-[-5%] bottom-[10%] h-[500px] w-[500px] rounded-full bg-purple-50 blur-[100px]" />
         <div className="absolute inset-0" style={{ 
@@ -202,11 +202,11 @@ const SpecialSection = () => {
 
         <div className="relative flex justify-center items-center">
 
-          <div className="relative h-[300px] w-[300px] sm:h-[450px] sm:w-[450px] md:h-[500px] md:w-[500px]">
+          <div className="relative h-[250px] w-[250px] sm:h-[450px] sm:w-[450px] md:h-[500px] md:w-[500px]">
 
-            <div className="absolute inset-[-40px] rounded-full border-2 border-dashed border-gray-200 animate-[spin_60s_linear_infinite]" />
+            <div className="absolute inset-[-10px] sm:inset-[-40px] rounded-full border-2 border-dashed border-gray-200 animate-[spin_60s_linear_infinite] opacity-50 sm:opacity-100" />
             
-            <div className="absolute inset-[-42px] animate-[spin_60s_linear_infinite]">
+            <div className="absolute inset-[-12px] sm:inset-[-42px] animate-[spin_60s_linear_infinite]">
               <div className="absolute left-1/2 top-0 -translate-x-1/2 rotate-45 border-r-2 border-t-2 border-gray-400 p-1" />
               <div className="absolute right-0 top-1/2 -translate-y-1/2 rotate-[135deg] border-r-2 border-t-2 border-gray-400 p-1" />
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rotate-[225deg] border-r-2 border-t-2 border-gray-400 p-1" />
@@ -276,7 +276,7 @@ const SpecialSection = () => {
 
 
             {activeStage && (
-              <div className={`absolute z-50 w-[280px] sm:w-[350px] lg:w-[400px] transition-all duration-300 ${getPopupPosition()} animate-in fade-in zoom-in slide-in-from-top-4`}>
+              <div className={`absolute z-50 w-[260px] sm:w-[350px] lg:w-[400px] transition-all duration-300 ${getPopupPosition()} animate-in fade-in zoom-in slide-in-from-top-4`}>
                 <div className={`relative rounded-2xl bg-gradient-to-b ${activeStage.gradientBg} p-4 shadow-2xl ring-1 ring-black/5 sm:p-6`}>
                   <div className={`absolute h-0 w-0 border-[10px] border-transparent ${getArrowPosition()}`} />
                   

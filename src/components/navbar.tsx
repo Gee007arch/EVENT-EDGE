@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronDown, Search, User, ClipboardList, Calendar, CheckSquare, Users, Handshake, Link as Star, Zap, DollarSign, Settings, Megaphone, ArrowRight, Building2, LayoutGrid, Tag, Globe, GraduationCap, HelpCircle, Info, Mail, Target, CalendarCheck, TrendingUp } from 'lucide-react'
+import { ChevronDown, Search, User, ClipboardList, Calendar, CheckSquare, Users, Handshake, Link as Star, Zap, DollarSign, Settings, Megaphone, ArrowRight, Building2, LayoutGrid, Tag, Globe, GraduationCap, HelpCircle, Info, Mail, Target, CalendarCheck, TrendingUp, Menu, X, ChevronRight, ChevronLeft, MapPin, PlayCircle } from 'lucide-react'
 import eventedgeIcon from '../assets/event-edge icon.png'
 
 const navItems = [
@@ -303,17 +303,34 @@ const hoteliersData = {
 
 const Navbar = () => {
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [expandedMobileSection, setExpandedMobileSection] = useState<string | null>(null);
   const location = useLocation();
 
   useEffect(() => {
     setActiveMenu(null);
+    setExpandedMobileSection(null);
     setIsUserDropdownOpen(false);
+    setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
+
+    useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
+
   return (
-    <header className="fixed top-0 left-0 z-50 w-full bg-black/90 backdrop-blur-sm ">
-      <nav className="mx-auto flex max-w-[1600px] px-6 lg:px-12 items-center justify-between gap-6 py-6 text-md text-white relative">
+    <div className="relative">
+      <header className="fixed top-0 left-0 z-[100] w-full bg-black/90 backdrop-blur-sm">
+        <nav className="mx-auto flex max-w-[1600px] px-6 lg:px-12 items-center justify-between gap-6 py-6 text-md text-white relative">
         <div className="flex items-center gap-12">
           <a
             href="/"
@@ -350,7 +367,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        {activeMenu === 'Products' && (
+        {activeMenu === 'Products' && !isMobileMenuOpen && (
           <div className="absolute top-[80px] left-0 w-full bg-[#0a0a0a] border-t border-gray-800 shadow-2xl animate-in fade-in slide-in-from-top-2 z-50">
             <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-10 flex">
               
@@ -406,11 +423,10 @@ const Navbar = () => {
           </div>
         )}
 
-        {activeMenu === 'Event types' && (
+        {activeMenu === 'Event types' && !isMobileMenuOpen && (
           <div className="absolute top-[80px] left-0 w-full bg-[#0a0a0a] border-t border-gray-800 shadow-2xl animate-in fade-in slide-in-from-top-2 z-50">
             <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-10 flex">
               
-              {/* Left Side: 4 Columns */}
               <div className="w-[70%] grid grid-cols-4 gap-8 pr-12">
                 {eventTypesData.columns.map((col, idx) => (
                   <div key={idx} className="flex flex-col h-full">
@@ -439,7 +455,6 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Right Side: Featured Image Card */}
               <div className="w-[30%] pl-12 border-l border-gray-800 flex items-center justify-center">
                 <div className="rounded-xl overflow-hidden border border-gray-800 bg-[#141414] group w-full">
                   <div className="h-48 overflow-hidden">
@@ -463,11 +478,10 @@ const Navbar = () => {
           </div>
         )}
 
-        {activeMenu === 'Resources' && (
+        {activeMenu === 'Resources' && !isMobileMenuOpen && (
           <div className="absolute top-[80px] left-0 w-full bg-[#0a0a0a] border-t border-gray-800 shadow-2xl animate-in fade-in slide-in-from-top-2 z-50">
             <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-10 flex">
               
-              {/* Left Side: 3 Columns */}
               <div className="w-[70%] grid grid-cols-3 gap-8 pr-12">
                 {resourcesData.columns.map((col, idx) => (
                   <div key={idx} className="flex flex-col h-full">
@@ -488,11 +502,10 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Right Side: Featured Demo Card */}
               <div className="w-[30%] pl-12 border-l border-gray-800 flex items-center justify-center">
                 <div className="rounded-xl overflow-hidden border border-gray-800 bg-[#141414] group w-full">
                   <div className="h-48 overflow-hidden bg-white flex items-center justify-center p-4">
-                    {/* Simulated dashboard image */}
+
                     <div className="w-full h-full border border-gray-200 rounded-lg shadow-sm relative overflow-hidden flex flex-col">
                        <div className="h-6 bg-gray-50 border-b border-gray-200 flex items-center px-2 gap-1.5">
                          <div className="w-2 h-2 rounded-full bg-red-400"></div>
@@ -525,11 +538,10 @@ const Navbar = () => {
           </div>
         )}
 
-        {activeMenu === 'Company' && (
+        {activeMenu === 'Company' && !isMobileMenuOpen && (
           <div className="absolute top-[80px] left-0 w-full bg-[#0a0a0a] border-t border-gray-800 shadow-2xl animate-in fade-in slide-in-from-top-2 z-50">
             <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-10 flex">
               
-              {/* Left Side: 3 Columns */}
               <div className="w-[70%] grid grid-cols-3 gap-8 pr-12">
                 {companyData.columns.map((col, idx) => (
                   <div key={idx} className="flex flex-col h-full">
@@ -550,7 +562,6 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Right Side: Featured Careers Card */}
               <div className="w-[30%] pl-12 border-l border-gray-800 flex items-center justify-center">
                 <div className="rounded-xl overflow-hidden border border-gray-800 bg-[#141414] group w-full">
                   <div className="h-48 overflow-hidden relative">
@@ -574,11 +585,10 @@ const Navbar = () => {
           </div>
         )}
 
-        {activeMenu === 'For hoteliers & venues' && (
+        {activeMenu === 'For hoteliers & venues' && !isMobileMenuOpen && (
           <div className="absolute top-[80px] left-0 w-full bg-[#0a0a0a] border-t border-gray-800 shadow-2xl animate-in fade-in slide-in-from-top-2 z-50">
             <div className="mx-auto max-w-[1600px] px-6 lg:px-12 py-10">
               
-              {/* MICE Business Section */}
               <div className="mb-10 pb-10 border-b border-gray-800">
                 <a href="#" className="inline-flex items-center gap-1.5 text-[15px] font-bold text-[#22c55e] hover:text-[#16a34a] transition-colors mb-8 group">
                   {hoteliersData.miceBusiness.title}
@@ -606,7 +616,6 @@ const Navbar = () => {
                 </div>
               </div>
 
-              {/* Corporate Travel Section */}
               <div>
                 <a href="#" className="inline-flex items-center gap-1.5 text-[15px] font-bold text-[#22c55e] hover:text-[#16a34a] transition-colors mb-6 group">
                   {hoteliersData.corporateTravel.title}
@@ -670,7 +679,7 @@ const Navbar = () => {
             <Search size={21} strokeWidth={2.2} />
           </button>
 
-          <div className="relative">
+          <div className="relative hidden md:block">
             <button
               type="button"
               onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
@@ -699,9 +708,276 @@ const Navbar = () => {
             )}
           </div>
           
+          <button
+            type="button"
+            className="lg:hidden text-white hover:text-[#EE3238] transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </nav>
     </header>
+
+
+
+    {isMobileMenuOpen && (
+      <div className="lg:hidden fixed inset-0 bg-[#0a0a0a] z-[9999] overflow-y-auto">
+
+          <div className="flex items-center justify-between px-6 py-6 border-b border-gray-800 bg-[#0a0a0a]">
+            <img src={eventedgeIcon} alt="Event Edge" className="w-40" />
+            <button 
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-white hover:text-[#EE3238] transition-colors"
+            >
+              <X size={32} />
+            </button>
+          </div>
+
+          <div className="px-6 py-6">
+
+            <div className="relative mb-8">
+              <input 
+                type="text" 
+                placeholder="Search" 
+                className="w-full bg-[#1a1a1a] border border-gray-800 rounded-full py-3 px-6 text-white placeholder-gray-500 focus:outline-none focus:border-[#EE3238]"
+              />
+              <Search className="absolute right-5 top-1/2 -translate-y-1/2 text-gray-500" size={20} />
+            </div>
+
+            {!activeMenu ? (
+              <div className="space-y-1">
+                {navItems.map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => setActiveMenu(item)}
+                    className="flex items-center justify-between w-full py-4 text-[17px] font-bold text-white border-b border-gray-900 hover:text-[#EE3238] transition-colors"
+                  >
+                    <span>{item}</span>
+                    <ChevronRight size={20} className="text-gray-500" />
+                  </button>
+                ))}
+                
+                <div className="mt-8 pt-8 space-y-6">
+                  <Link to="/demo" className="flex items-center gap-4 text-[15px] font-bold text-white uppercase tracking-wider hover:text-[#EE3238] transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-[#EE3238]/10 flex items-center justify-center text-[#EE3238]">
+                      <PlayCircle size={20} />
+                    </div>
+                    Request Demo
+                  </Link>
+                  <Link to="/venues" className="flex items-center gap-4 text-[15px] font-bold text-white uppercase tracking-wider hover:text-[#EE3238] transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500">
+                      <MapPin size={20} />
+                    </div>
+                    Find Event Venues
+                  </Link>
+                  <Link to="/login" className="flex items-center gap-4 text-[15px] font-bold text-white uppercase tracking-wider hover:text-[#EE3238] transition-colors">
+                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
+                      <User size={20} />
+                    </div>
+                    Log In
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <button 
+                  onClick={() => {
+                    setActiveMenu(null);
+                    setExpandedMobileSection(null);
+                  }}
+                  className="flex items-center gap-2 text-[#EE3238] font-bold mb-8 text-[17px]"
+                >
+                  <ChevronLeft size={20} />
+                  {activeMenu}
+                </button>
+
+                <div className="space-y-4">
+                  {activeMenu === 'Products' && (
+                    <div className="space-y-6">
+                      {productsData.lifecycle.map((stage, idx) => (
+                        <div key={idx} className="border-b border-gray-900 pb-4">
+                          <button 
+                            onClick={() => setExpandedMobileSection(expandedMobileSection === stage.title ? null : stage.title)}
+                            className="flex items-center justify-between w-full text-[15px] font-bold text-gray-300 uppercase tracking-wider"
+                          >
+                            <span>{stage.title}</span>
+                            <ChevronDown size={20} className={`transition-transform duration-200 ${expandedMobileSection === stage.title ? 'rotate-180 text-[#EE3238]' : ''}`} />
+                          </button>
+                          {expandedMobileSection === stage.title && (
+                            <ul className="mt-4 space-y-4 pl-2">
+                              {stage.items.map((subItem, subIdx) => (
+                                <li key={subIdx}>
+                                  <Link to={`/${stage.itemsLink[subIdx]}`} className="text-[16px] font-semibold text-white hover:text-[#EE3238]">
+                                    {subItem}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                      
+                      <Link to="/products" className="flex items-center gap-2 text-[15px] font-bold text-[#EE3238] mt-8">
+                        See all products <ChevronRight size={16} />
+                      </Link>
+
+                      <div className="mt-12">
+                        <div className="flex items-center gap-2 mb-6">
+                          <Star size={16} className="text-[#EE3238] fill-[#EE3238]" />
+                          <h4 className="text-[15px] font-bold text-white uppercase tracking-wider">Featured</h4>
+                        </div>
+                        <div className="space-y-6">
+                          {productsData.featured.map((item, idx) => (
+                            <a key={idx} href="#" className="flex items-start gap-4 group">
+                              <div className="mt-1 text-[#EE3238]">
+                                {item.icon}
+                              </div>
+                              <div>
+                                <h5 className="text-[16px] font-bold text-white group-hover:text-[#EE3238] transition-colors">{item.title}</h5>
+                                <p className="text-[13px] text-gray-500 mt-1">{item.description}</p>
+                              </div>
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeMenu === 'Event types' && (
+                    <div className="space-y-6">
+                      {eventTypesData.columns.map((col, idx) => (
+                        <div key={idx} className="border-b border-gray-900 pb-4">
+                          <button 
+                            onClick={() => setExpandedMobileSection(expandedMobileSection === col.title ? null : col.title)}
+                            className="flex items-center justify-between w-full text-[15px] font-bold text-gray-300 uppercase tracking-wider"
+                          >
+                            <span>{col.title}</span>
+                            <ChevronDown size={20} className={`transition-transform duration-200 ${expandedMobileSection === col.title ? 'rotate-180 text-[#EE3238]' : ''}`} />
+                          </button>
+                          {expandedMobileSection === col.title && (
+                            <ul className="mt-4 space-y-4 pl-2">
+                              {col.items.map((subItem, subIdx) => (
+                                <li key={subIdx}>
+                                  <a href="#" className="text-[16px] font-semibold text-white hover:text-[#EE3238]">
+                                    {subItem}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {activeMenu === 'Resources' && (
+                    <div className="space-y-6">
+                      {resourcesData.columns.map((col, idx) => (
+                        <div key={idx} className="border-b border-gray-900 pb-4">
+                          <button 
+                            onClick={() => setExpandedMobileSection(expandedMobileSection === col.title ? null : col.title)}
+                            className="flex items-center justify-between w-full text-[15px] font-bold text-gray-300 uppercase tracking-wider"
+                          >
+                            <span>{col.title}</span>
+                            <ChevronDown size={20} className={`transition-transform duration-200 ${expandedMobileSection === col.title ? 'rotate-180 text-[#EE3238]' : ''}`} />
+                          </button>
+                          {expandedMobileSection === col.title && (
+                            <ul className="mt-4 space-y-4 pl-2">
+                              {col.items.map((subItem, subIdx) => (
+                                <li key={subIdx}>
+                                  <a href="#" className="text-[16px] font-semibold text-white hover:text-[#EE3238]">
+                                    {subItem}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {activeMenu === 'Company' && (
+                    <div className="space-y-6">
+                      {companyData.columns.map((col, idx) => (
+                        <div key={idx} className="border-b border-gray-900 pb-4">
+                          <button 
+                            onClick={() => setExpandedMobileSection(expandedMobileSection === col.title ? null : col.title)}
+                            className="flex items-center justify-between w-full text-[15px] font-bold text-gray-300 uppercase tracking-wider"
+                          >
+                            <span>{col.title}</span>
+                            <ChevronDown size={20} className={`transition-transform duration-200 ${expandedMobileSection === col.title ? 'rotate-180 text-[#EE3238]' : ''}`} />
+                          </button>
+                          {expandedMobileSection === col.title && (
+                            <ul className="mt-4 space-y-4 pl-2">
+                              {companyData.columns[idx].items.map((subItem, subIdx) => (
+                                <li key={subIdx}>
+                                  <a href="#" className="text-[16px] font-semibold text-white hover:text-[#EE3238]">
+                                    {subItem}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {activeMenu === 'For hoteliers & venues' && (
+                    <div className="space-y-12">
+                      <div className="space-y-6">
+                        <h4 className="text-sm font-bold text-[#22c55e] uppercase tracking-wider">{hoteliersData.miceBusiness.title}</h4>
+                        {hoteliersData.miceBusiness.columns.map((col, idx) => (
+                          <div key={idx} className="border-b border-gray-900 pb-4">
+                            <button 
+                              onClick={() => setExpandedMobileSection(expandedMobileSection === col.title ? null : col.title)}
+                              className="flex items-center justify-between w-full text-[14px] font-bold text-gray-400 uppercase tracking-wider"
+                            >
+                              <span>{col.title}</span>
+                              <ChevronDown size={18} className={`transition-transform duration-200 ${expandedMobileSection === col.title ? 'rotate-180 text-[#22c55e]' : ''}`} />
+                            </button>
+                            {expandedMobileSection === col.title && (
+                              <ul className="mt-4 space-y-4 pl-2">
+                                {col.items.map((subItem, subIdx) => (
+                                  <li key={subIdx}>
+                                    <a href="#" className="text-[16px] font-semibold text-white hover:text-[#22c55e]">
+                                      {subItem}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-6">
+                        <h4 className="text-sm font-bold text-[#22c55e] uppercase tracking-wider">{hoteliersData.corporateTravel.title}</h4>
+                        {hoteliersData.corporateTravel.columns.map((col, idx) => (
+                          <div key={idx} className="border-b border-gray-900 pb-4">
+                            <ul className="space-y-4">
+                              {col.items.map((subItem, subIdx) => (
+                                <li key={subIdx}>
+                                  <a href="#" className="text-[16px] font-semibold text-white hover:text-[#22c55e]">
+                                    {subItem}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   )
 }
 

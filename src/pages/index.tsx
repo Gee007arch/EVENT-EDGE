@@ -6,7 +6,7 @@ import LastSection from '../components/index-comp/lastSection'
 
 const Index = () => {
   return (
-    <div>
+    <div className='bg-black'>
         <HeroSection />
         <SecondSection />
         <SpecialSection />

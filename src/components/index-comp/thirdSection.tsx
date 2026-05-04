@@ -49,7 +49,7 @@ const products = [
 
 const ThirdSection = () => {
   return (
-    <div className="bg-white">
+    <div className="bg-">
 
       {/* <section className="relative overflow-hidden py-24">
         <div className="pointer-events-none absolute left-0 top-0 h-full w-full opacity-20">
@@ -107,7 +107,7 @@ const ThirdSection = () => {
       </section> */}
 
 
-      <section className="bg-white py-12 lg:py-24">
+      <section className="bg- py-12 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-2xl font-extrabold tracking-tight text-[#D22023] md:text-4xl lg:text-5xl mb-4">
@@ -115,14 +115,15 @@ const ThirdSection = () => {
             </h2>
             <p className="text-sm md:text-base font-medium text-[#B1B1B1] max-w-2xl mx-auto">
               Automate your event planning process with Event Edge event technology.<br className="hidden md:block" />
-              Host engaging <span className="text-black hover:underline cursor-pointer">webinars</span>, <span className="text-black hover:underline cursor-pointer">in-person</span>, <span className="text-black hover:underline cursor-pointer">virtual</span>, and <span className="text-black hover:underline cursor-pointer">hybrid events</span> and get real results.
+              Host engaging <span className="text-[#EE3238] hover:underline cursor-pointer">webinars</span>, <span className="text-[#EE3238] hover:underline cursor-pointer">in-person</span>, <span className="text-[#EE3238] hover:underline cursor-pointer">virtual</span>, and <span className="text-[#EE3238] hover:underline cursor-pointer">hybrid events</span> and get real results.
             </p>
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product, index) => (
-              <div key={index} className="flex flex-col rounded-3xl border border-[#B1B1B1] bg-white p-2 shadow-sm transition-all hover:shadow-md">
-                <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gray-50">
+              <div key={index} className="group relative flex flex-col rounded-3xl bg-gradient-to-br from-[#EE3238] via-orange-500 to-[#D22023] p-[1px] shadow-sm transition-all hover:shadow-xl ">
+                <div className="flex flex-1 flex-col rounded-3xl   bg-[#0a0a0a] p-2">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl ">
                   <img 
                     src={product.image} 
                     alt={product.title} 
@@ -132,16 +133,16 @@ const ThirdSection = () => {
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
-                  <span className="text-base lg:text-lg font-normal tracking-widest text-[#B1B1B1] uppercase mb-3">
+                  <span className="text-base lg:text-lg font-normal tracking-widest text-[#D22023] uppercase mb-3">
                     {product.category}
                   </span>
-                  <h3 className="mb-4 text-lg font-bold leading-snug text-[#D22023] md:text-xl">
+                  <h3 className="mb-4 text-lg font-bold leading-snug text-[#CACACA] md:text-xl">
                     {product.title}
                   </h3>
                   <div className="mt-auto">
                     <a 
                       href="#" 
-                      className="group inline-flex items-center gap-1 text-sm font-bold text-[#000000] transition-colors hover:text-[#EE3238]"
+                      className="group inline-flex items-center gap-1 text-sm font-bold text-[#EE3238] transition-colors hover:text-[#EE3238]"
                     >
                       {product.linkText}
                       <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -149,7 +150,8 @@ const ThirdSection = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
           </div>
 
           <div className="mt-16 text-center">
@@ -161,34 +163,35 @@ const ThirdSection = () => {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-24 overflow-visible">
-        <div className="relative rounded-3xl bg-black p-8 lg:p-16 max-w-[85%]">
-          <div className="grid lg:grid-cols-3 gap-12 items-center">
+        <div className="relative rounded-3xl bg-gradient-to-br from-[#D22023] via-[#EE3238] to-orange-500 p-8 lg:p-16 w-full lg:max-w-[85%]">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
 
-            <div className="text-[#CACACA] z-10 col-span-2">
-              <h2 className="text-xl font-extrabold mb-6 lg:text-2xl">
+            <div className="text-white z-10 col-span-1 lg:col-span-2">
+              <h2 className="text-xl font-extrabold mb-6 lg:text-2xl text-center lg:text-left">
                 Find the right venue faster with AI
               </h2>
-              <p className="text-base lg:text-lg mb-10 opacity-90 ">
+              <p className="text-base lg:text-lg mb-10 opacity-90 text-center lg:text-left">
                 Source the perfect venue for your next event with the <span className="font-bold text-white">Event Edge Supplier Network</span>. 
                 Let AI refine results from nearly 340K venues and quickly build strong RFPs.
               </p>
-              <a 
-                href="#" 
-                className="inline-block rounded-lg border-2 border-[#CACACA] px-8 py-3 font-bold transition-all hover:bg-[#CACACA] hover:text-black"
-              >
-                Find venues for free
-              </a>
+              <div className="flex justify-center lg:justify-start">
+                <a 
+                  href="#" 
+                  className="inline-block rounded-lg border-2 border-white px-8 py-3 font-bold transition-all hover:bg-white hover:text-[#EE3238]"
+                >
+                  Find venues for free
+                </a>
+              </div>
             </div>
 
 
-            <div className="relative lg:absolute lg:right-[-200px] lg:w-[%] z-20 mt-8 lg:mt-0 col-span-1">
-              <div className="relative  overflow-hidden shadow-2xl group cursor-pointer transition-transform duration-500 hover:scale-[1.02]">
+            <div className="relative lg:absolute lg:right-[-200px] lg:w-[50%] z-20 mt-8 lg:mt-0 col-span-1">
+              <div className="relative overflow-hidden shadow-2xl group cursor-pointer transition-transform duration-500 hover:scale-[1.02] flex justify-center lg:block">
                 <img 
                   src={connect} 
                   alt="Connect with venues" 
-                  className="w--full" 
+                  className="w-full max-w-[400px] lg:max-w-none" 
                 />
-            
               </div>
             </div>
           </div>
@@ -200,31 +203,31 @@ const ThirdSection = () => {
       <section className="mx-auto max-w-7xl px-6 lg:px-8 py-12 lg:py-24">
         <div className="relative flex flex-col lg:flex-row items-center">
 
-          <div className="relative z-20 w-full lg:w-[55%] mb-8 lg:mb-0 lg:mr-[-28%]">
-            <div className=" overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.02]">
+          <div className="relative z-20 w-full lg:w-[55%] mb-[-40px] lg:mb-0 lg:mr-[-28%] flex justify-center lg:block">
+            <div className="overflow-hidden transition-transform duration-500 hover:scale-[1.02] w-[85%] lg:w-full">
               <img 
                 src={demo} 
                 alt="Event planning in action" 
-                className="w-[85%] " 
+                className="w-full lg:w-[85%]" 
               />
             </div>
           </div>
 
-          <div className="relative z-10 w-full lg:flex-1 rounded-3xl bg-black p-8 lg:p-16 lg:pl-72 lg:py-36">
-            <div className="">
-              <h2 className="text-xl font-extrabold text-[#CACACA] mb-8 lg:text-2xl">
+          <div className="relative z-10 w-full lg:flex-1 rounded-3xl bg-gradient-to-bl from-[#D22023] via-[#EE3238] to-orange-500 p-8 pt-20 lg:p-16 lg:pl-72 lg:py-36">
+            <div className="text-center lg:text-left">
+              <h2 className="text-xl font-extrabold text-white mb-8 lg:text-2xl">
                 Ready to see how it works?
               </h2>
-              <div className="flex flex- gap-4 text-base lg:text-lg">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a 
                   href="#" 
-                  className="rounded-lg  bg-[#CACACA] px-6 py-3 font-bold text-black   transition-all hover:bg-opacity-70 hover:text-opacity-70"
+                  className="rounded-lg bg-white px-6 py-3 font-bold text-[#EE3238] transition-all hover:bg-[#EE3238] hover:text-white text-center"
                 >
                   Request a demo
                 </a>
                 <a 
                   href="#" 
-                  className="rounded-lg border-2 border-[#CACACA] px-6 py-3 font-bold text-[#CACACA] transition-all hover:bg-[#CACACA] hover:text-black"
+                  className="rounded-lg border-2 border-white px-6 py-3 font-bold text-white transition-all hover:bg-white hover:text-[#EE3238] text-center"
                 >
                   Watch a 10-minute demo
                 </a>

@@ -42,7 +42,7 @@ const stats = [
 const SecondSection = () => {
   return (
     <>
-      <section className="bg-white py-12 lg:py-24 lg:mt-20">
+      <section className=" py-12 lg:py-24 lg:mt-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative flex flex-col lg:flex-row items-center">
             
@@ -57,7 +57,7 @@ const SecondSection = () => {
             </div>
 
             <div className="relative z-10 w-full lg:flex-1 lg::max-w-4xl">
-              <div className="rounded-3xl bg-black py-16 px-8  lg:py-28 lg:pl-80 ">
+              <div className="rounded-3xl bg-white/10 py-16 px-8  lg:py-28 lg:pl-80 ">
                 <div className="text-[#CACACA]">
                   <div className="mb-3">
                     <img src={eventedgeIcon} alt="event edge icon" className="w-24 md:w-32 lg:w-40" />
@@ -82,9 +82,9 @@ const SecondSection = () => {
                   </a>
                 </div>
 
-                <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 overflow-hidden rounded-r-[40px]">
+                {/* <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 overflow-hidden rounded-r-[40px]">
                   <div className="absolute -right-20 top-1/4 h-96 w-96 rounded-full bg-white/10 blur-[100px]" />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -93,7 +93,7 @@ const SecondSection = () => {
 
 
 
-      <section className="bg-white py-12 lg:py-24">
+      <section className="bg- py-12 lg:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid items-center gap-3 lg:gap-16 lg:grid-cols-2">
 

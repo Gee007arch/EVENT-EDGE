@@ -5,6 +5,7 @@ import Login from './pages/auth/login'
 import Signup from './pages/auth/signup'
 import RegistrationAndMarketing from './pages/products/registrationAndMarketing';
 import VenueSourcing from './pages/products/venueSourcing';
+import SpeakerManagement from './pages/products/speakerManagement';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
           <Route path="/registrationAndMarketing" element={<RegistrationAndMarketing />} />  
           <Route path="/venueSourcing" element={<VenueSourcing />} />  
         
-          <Route path="/ticketing" element={<div>Ticketing</div>} />  
+          <Route path="/speakerManagement" element={<SpeakerManagement />} />  
           <Route path="/analytics" element={<div>Analytics</div>} />  
           <Route path="/crm" element={<div>CRM</div>} />  
           <Route path="/payments" element={<div>Payments</div>} />  
